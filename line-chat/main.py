@@ -19,7 +19,7 @@ parser = WebhookParser(CHANNEL_SECRET)
 async def webhook(request: Request):
     signature = request.headers.get("X-Line-Signature")
     body = await request.body()
-    
+
     try:
         events = parser.parse(body.decode("utf-8"), signature)
     except InvalidSignatureError:
@@ -28,7 +28,18 @@ async def webhook(request: Request):
     for event in events:
         if isinstance(event, MessageEvent) and isinstance(event.message, TextMessage):
             user_input = event.message.text
-            response_text = query_ollama(user_input)
+
+            # Check for model keywords (you can customize this)
+            if "mistral" in user_input.lower():
+                model = "mistral"
+            elif "gpt" in user_input.lower():
+                model = "gpt-4"
+            elif "llama" in user_input.lower():
+                model = "llama3.2"
+            else:
+                model = "llama3.2"  # Default model
+
+            response_text = query_ollama(user_input, model)
             
             line_bot_api.reply_message(
                 event.reply_token,
@@ -37,13 +48,21 @@ async def webhook(request: Request):
 
     return {"message": "OK"}
 
-def query_ollama(prompt):
-    """Send a request to the Ollama API."""
-    payload = {"model": "mistral", "prompt": prompt}
+def query_ollama(prompt, model="mistral"):
+    """Send a request to the Ollama API with a specified model."""
+    payload = {"model": model, "prompt": prompt}
     response = requests.post(OLLAMA_API_URL, json=payload)
 
     if response.status_code == 200:
-        return response.json().get("response", "No response received.")
+        try:
+            response_json = response.json()
+            # Log the entire response for debugging purposes
+            print(f"API Response: {response_json}")
+            return response_json.get("response", "No response received.")
+        except ValueError:
+            # If the response isn't a valid JSON, log the raw content
+            print(f"Error: Response is not in JSON format. Raw response: {response.text}")
+            return "Sorry, the response is not in the expected format."
     else:
-        return "Sorry, I couldn't process your request."
-
+        print(f"Error: Received status code {response.status_code} from Ollama API.")
+        return f"Sorry, I couldn't process your request. Status Code: {response.status_code}"

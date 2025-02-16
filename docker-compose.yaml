@@ -47,7 +47,7 @@ services:
     environment:
       - CHANNEL_ACCESS_TOKEN=${CHANNEL_ACCESS_TOKEN}
       - CHANNEL_SECRET=${CHANNEL_SECRET}
-      - OLLAMA_API_URL=http://ollama:11434
+      - OLLAMA_API_URL=http://ollama:11434/api/generate
     ports:
       - "8000:8000"
     depends_on:
