@@ -1,3 +1,7 @@
+# OLLAMA with Open WebUI and LINE Chatbot
+# Customize with NGINX (Reverse-proxy) and NGROK (Local Tunnelling)
+# Created and Modified by PEACE & CHATGPT @ 17022025
+
 services:
   ollama:
     image: ollama/ollama
@@ -9,17 +13,18 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-    environment:
-      - OLLAMA_ENABLE_CUDA=1
-      - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    # If your GPU is NVIDIA, UNCOMMENT Line 17-27. 
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    # environment:
+    #   - OLLAMA_ENABLE_CUDA=1
+    #   - NVIDIA_VISIBLE_DEVICES=all
+    #   - NVIDIA_DRIVER_CAPABILITIES=compute,utility
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
