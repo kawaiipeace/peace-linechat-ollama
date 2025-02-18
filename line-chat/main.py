@@ -19,7 +19,7 @@ line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 parser = WebhookParser(CHANNEL_SECRET)
 
 # Supported models
-VALID_MODELS = {"mistral", "gpt-4", "llama3.2","hf.co/openthaigpt/openthaigpt1.5-7b-instruct","deepseek-r1"}
+VALID_MODELS = {"mistral","llama3.2","deepseek-r1"}
 
 # Store user-selected models
 user_models = {}
@@ -69,12 +69,8 @@ def detect_model(user_input: str) -> str:
     user_input_lower = user_input.lower()
     if "mistral" in user_input_lower:
         return "mistral"
-    elif "gpt" in user_input_lower:
-        return "gpt-4"
     elif "llama3.2" in user_input_lower:
         return "llama3.2"
-    elif "hf.co/openthaigpt/openthaigpt1.5-7b-instruct" in user_input_lower:
-        return "hf.co/openthaigpt/openthaigpt1.5-7b-instruct"
     elif "deepseek-r1" in user_input_lower:
         return "deepseek-r1"
     return "llama3.2"  # Default model
