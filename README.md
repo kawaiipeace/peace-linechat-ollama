@@ -39,7 +39,7 @@ localhost:11434 หรือ localhost/ollama/
 localhost:8000 หรือ localhost/line-chat/
 ```
 
-4. ให้ทำการติดตั้ง AI Model จาก [ลิงก์นี้](http://localhost:8080/admin/settings) สำหรับ AI Model ที่แนะนำให้ติดตั้งมีดังนี้
+4. ให้ทำการติดตั้ง AI Model จาก [ลิงก์นี้](http://localhost:8080/admin/settings) ในแท็บ Model สำหรับ AI Model ที่แนะนำให้ติดตั้งมีดังนี้
 ```bash
 llama3.2
 deepseek-r1
