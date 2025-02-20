@@ -34,7 +34,6 @@ docker compose -f docker-compose-gpu.yaml up -d --build
 3. ทดสอบโดยการเปิดลิงก์บน Web Browser
 ```bash
 localhost
-localhost:8080
 localhost:11434 หรือ localhost/ollama/
 localhost:8000 หรือ localhost/line-chat/
 ```
