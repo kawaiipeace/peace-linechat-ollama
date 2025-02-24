@@ -18,9 +18,9 @@
 
 ## วิธีการติดตั้งและเริ่มใช้งาน (Installation)
 1. เปลี่ยนชื่อไฟล์ .env.example ให้เป็น .env และเพิ่ม Key Token ดังนี้
-- CHANNEL_ACCESS_TOKEN หาได้จาก [ที่นี่](https://developers.line.biz/console) ในแท็บ Basic settings
-- CHANNEL_SECRET หาได้จาก [ที่นี่](https://developers.line.biz/console) ในแท็บ Messaging API
-- NGROK_AUTHTOKEN หาได้จาก [ที่นี่](https://dashboard.ngrok.com/get-started/your-authtoken)
+- CHANNEL_ACCESS_TOKEN หาได้จาก [ที่นี่](https://developers.line.biz/console) ในแท็บ Messaging API
+- CHANNEL_SECRET หาได้จาก [ที่นี่](https://developers.line.biz/console) ในแท็บ Basic settings
+- NGROK_AUTHTOKEN หาได้จาก [ที่นี่](https://dashboard.ngrok.com/get-started/your-authtoken) ในแท็บ your authtoken
 
 2. เปิดโปรแกรม Powershell (หรือ Terminal) และให้ทำการรัน Services ทั้งหมดโดยใช้คำสั่ง
 ```bash
