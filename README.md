@@ -53,9 +53,9 @@ deepseek-r1
 mistral
 ```
 
-5. ระหว่างรอติดตั้งจากข้อ 4 ให้ทำการคัดลอก URL Endpoints ของ NGROK หาได้จาก [ที่นี่](https://dashboard.ngrok.com/endpoints?sortBy=updatedAt&orderBy=desc)
+5. ระหว่างรอติดตั้งจากข้อ 4 ให้เข้า [ลิงก์นี้](https://dashboard.ngrok.com/endpoints?sortBy=updatedAt&orderBy=desc) เพื่อทำการคัดลอก URL Endpoints ของ NGROK เอาไปใส่ใน Line Webhook URL
 
-6. ให้ติ๊ก Use webhook และทำการเพิ่ม Webhook URL จาก [ลิงก์นี้](https://developers.line.biz/console) ในแท็บ Messaging API โดยเพิ่ม **[URL ที่ได้จาก NGROK]/line-chat/webhook** เสร็จแล้วให้ลองกด Verify หากขึ้น Success แปลว่าสำเร็จ
+6. ให้เข้า [ลิงก์นี้](https://developers.line.biz/console) หลังจากเข้าสู่ระบบแล้ว ในแท็บ Messaging API ให้ติ๊ก Use webhook และทำการเพิ่ม Webhook URL โดยเพิ่ม **[URL ที่ได้จาก NGROK]/line-chat/webhook** เสร็จแล้วให้ลองกด Verify หากขึ้น Success แปลว่าสำเร็จ
 
 7. ให้ทดสอบโดยการสนทนากับ AI Bot ผ่าน WebUI ก่อน จากนั้นลองสนทนาผ่าน Line OA
 
