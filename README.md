@@ -10,11 +10,19 @@
 - Integration with Social Network (**LINE**).
 
 ## สิ่งที่จำเป็นก่อนเริ่ม (Prerequisite)
+- *สำหรับระบบปฏิบัติการ Windows* ให้ติดตั้ง WSL ก่อน โดยการเปิดโปรแกรม Powershell (ผ่านสิทธิ์ Administrator)
+```bash
+wsl --install -d ubuntu
+```
 - Docker Engine หรือ Software Container เช่น [Rancher](https://rancherdesktop.io/) (แนะนำ) หรือ Docker Desktop (ถ้าใช้เน็ตเครือข่ายของ PEA ห้ามใช้ตัวนี้เด็ดขาด) [เหตุผลห้ามใช้](https://docs.docker.com/subscription/desktop-license/)
-- บัญชี Line Official Account (ที่เปิดการใช้งาน Messaging API) [วิธีการสมัคร](https://www.admeadme.co/blog/line/how-to-create-a-line-official-account/
+- *สำหรับระบบปฏิบัติการ Windows* ให้ดาวน์โหลด Images ต่าง ๆ จาก Docker โดยการเปิดโปรแกรม Powershell (ผ่านสิทธิ์ Administrator)
+```bash
+Get-Content docker-images.txt | ForEach-Object { docker pull $_ }
+```
+- เปิดบัญชี Line Official Account (ที่เปิดการใช้งาน Messaging API) [วิธีการสมัคร](https://www.admeadme.co/blog/line/how-to-create-a-line-official-account/
 )
-- บัญชี NGROK [สมัครที่นี่](https://dashboard.ngrok.com/signup)
-- กรณีที่เครื่องมีการ์ดจอของ NVIDIA ให้ติดตั้งไดรเวอร์ของ NVIDIA [เวอร์ชั่นล่าสุด](https://www.nvidia.com/en-us/drivers/)
+- เปิดบัญชี NGROK [สมัครที่นี่](https://dashboard.ngrok.com/signup)
+- *สำหรับระบบปฏิบัติการ Windows* กรณีที่เครื่องมีการ์ดจอของ NVIDIA ให้ติดตั้งไดรเวอร์ของ NVIDIA [เวอร์ชั่นล่าสุด](https://www.nvidia.com/en-us/drivers/)
 
 ## วิธีการติดตั้งและเริ่มใช้งาน (Installation)
 1. เปลี่ยนชื่อไฟล์ .env.example ให้เป็น .env และเพิ่ม Key Token ดังนี้
