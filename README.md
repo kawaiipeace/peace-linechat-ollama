@@ -14,7 +14,7 @@
 ```bash
 wsl --install -d ubuntu
 ```
-- Docker Engine หรือ Software Container เช่น [Rancher](https://rancherdesktop.io/) (แนะนำ) หรือ Docker Desktop (ถ้าใช้เน็ตเครือข่ายของ PEA ห้ามใช้ตัวนี้เด็ดขาด) [เหตุผลห้ามใช้](https://docs.docker.com/subscription/desktop-license/)
+- Docker Engine หรือ Software Container เช่น [Rancher](https://github.com/rancher-sandbox/rancher-desktop/releases/tag/v1.17.1) 1.17.1 (แนะนำ) หรือ Docker Desktop (ถ้าใช้เน็ตเครือข่ายของ PEA ห้ามใช้ตัวนี้เด็ดขาด) [เหตุผลห้ามใช้](https://docs.docker.com/subscription/desktop-license/)
 - *สำหรับระบบปฏิบัติการ Windows* ให้ดาวน์โหลด Images ต่าง ๆ จาก Docker โดยการเปิดโปรแกรม Powershell (ผ่านสิทธิ์ Administrator)
 ```bash
 Get-Content docker-images.txt | ForEach-Object { docker pull $_ }
