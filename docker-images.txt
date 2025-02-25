@@ -1,0 +1,6 @@
+nginx:latest
+ollama/ollama
+ghcr.io/open-webui/open-webui:main
+ngrok/ngrok:latest
+python:3.11
+milvusdb/milvus
